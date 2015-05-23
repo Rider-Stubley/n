@@ -1,0 +1,167 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+
+\renewcommand{\baselinestretch}{1}
+
+\setcounter{tocdepth}{3}
+
+\title{}
+\author{Rebecca Green, Liam McMahon, Rider Stubley}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage[margin=25.4mm]{geometry}
+\usepackage{gensymb}
+
+\usepackage{times}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage[font={small},rm]{caption}
+
+\renewcommand{\abstractname}{Executive Summary}
+
+\makeatletter
+\def\@makechapterhead#1{%
+	\vspace*{50\p@}%
+	{\parindent \z@ \raggedright \normalfont
+		\ifnum \c@secnumdepth >\m@ne
+		\if@mainmatter
+		%\huge\bfseries \@chapapp\space \thechapter
+		\Huge\bfseries \thechapter.\space%
+		%\par\nobreak
+		%\vskip 20\p@
+		\fi
+		\fi
+		\interlinepenalty\@M
+		\Huge \bfseries #1\par\nobreak
+		\vskip 18\p@
+	}}
+	\makeatother
+
+\titleformat*{\section}{\bfseries\fontsize{14}{12}\sffamily}
+\titleformat*{\subsection}{\itshape\bfseries\fontsize{12}{12}}
+
+\begin{document}
+	
+	\pagenumbering{roman} % Makes the front matter of the report have Roman numerals. Plz leave
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{1cm}
+			
+			\textbf{METR3100 Sensors and Actuators}
+			
+			\vspace{0.5cm}
+			Actuators Practical Aligned Assignment
+			
+			\vspace{1.5cm}
+			\textbf{Rebecca Green, Liam McMahon, Rider Stubley} \\
+			\vspace{0.5cm}
+			(43213517, 43186022, 43205259)
+			
+			\vfill
+			
+			METR3100 \\
+			University of Queensland \\
+			Australia \\
+			27/04/2015 \\
+		\end{center}
+	\end{titlepage}
+	
+	% Put executive summary here
+	\begin{abstract}
+		
+	\end{abstract}
+	
+	\tableofcontents
+	
+	% Use \chapter as the first level, \section as the second, \subsection as the third
+	\chapter{Introduction}
+	\pagenumbering{arabic} % starts the numbering in Arabic numerals at the first chapter. Plz leave
+	
+	\section{Aims}
+	
+	\section{Scope} % ?
+	
+	\section{Contents of Report}
+	
+	\section{Contributions}
+	
+	\section{Background}
+	
+	\chapter{Equipment and Procedure}
+	
+	\section{Equipment}
+	\subsection{Practical Equipment}
+	The equipment used in the practical were:
+	\begin{itemize}
+		\item{AC motor}
+		\item{Brake}
+		\item{Cooling fan}
+		\item{ABB drives}
+		\item{PC with \textit{drivewindows}; and}
+		\item{DSP7000}
+	\end{itemize}
+	\subsection{Safety Equipment}
+	The safety equipment used in the practical were:
+	\begin{itemize}
+		\item{Enclosed shoes; and}
+		\item{Hearing protection}
+	\end{itemize}
+	
+	\section{Procedure}
+	The procedure followed for this practical was:
+	\begin{enumerate}
+		\item{The ABB motor drives were turned on.}
+		\item{\textit{Drivewindows} was started on the PC connected to the ABB motor drive.}
+		\item{Remote control was taken over the motor.}
+		\item{The control mode of the motor was switched to scalar.}
+		\item{The frequency of the motor was set to 50 Hz.}
+		\item{The cooling fan was started for the brake.}
+		\item{The DSP7000 was started and set to open loop mode.}
+		\item{The brake was turned on.}
+		\item{The torque and speed displayed on the DSP7000 and the torque, speed, and motor current on \textit{drivewindows} and the information panel on the ABB drive were noted.}
+		\item{The brake percentage was increased incrementally and the torque, speed, and motor current were noted for all brake percentages examined.}
+	\end{enumerate}
+	
+	\chapter{Results}
+	
+	\chapter{Analysis and Discussion}
+	
+		\section{Experimental Data Analysis}
+		%Breakdown of the data, errors etc.
+		\section{Design Problem}
+		%Basically Part D
+		The scenario shown in Figure (insert number here) involves the ABB model AC motor pulling 		a mass up a given incline of $12.5\degree$. The motor shaft is attached to a flywheel of 
+		radius $R=100mm$ and inertia $J=5kgm^2$
+		%\begin{figure}[ht!] Basically I suck and can't insert the image here
+		%	\centering
+		%	\includegraphics[width=textwidth]{motorramp.png}
+		%	\caption{Part D design scenario.}
+		%\end{figure}
+		The force opposing the torque of the motor is modelled primarily by the viscous friction model 		given by:
+		\begin{align*}
+			F_f=\gamma m \cos \theta \dot{x}
+		\end{align*}
+		Where $\gamma$ is a friction constant $=$ 0.1, $m$ is the mass of the block, $\theta$ is the 
+		the angle of inclination of the block from horizontal and $\dot{x}$ is the speed the block is
+		being pulled up the ramp. In this system, there is also a load component due to gravity.\\
+		By taking the sum of the torques about the motor axis, we get the following relationship.
+		\begin{gather*}
+			\Sigma T_{axis} = J\dot{\omega} \\
+			T_{load} - F_fR - F_{gravity}R=J\dot{\omega}\\
+			T_{load}=J\dot{\omega}+F_fR+F_{gravity}R
+		\end{gather*}
+		It should be noted that for fixed speed operation, $\dot{\omega}=0$. Having expressions for 
+		$F_f$ and $F_{gravity}$.
+	\chapter{Conclusions}
+	
+	\chapter{Recommendations}
+	
+	\chapter{References}
+	
+	\chapter{Appendices}
+	
+	
+\end{document}          
